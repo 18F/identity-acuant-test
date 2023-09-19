@@ -1,8 +1,8 @@
 import { useEffect } from "react"
 
-const useCamera = ({sdkLoaded, acuantCameraUIAvailable}) => {
+const useCamera = ({sdkLoaded, acuantCameraUIAvailable, cameraShouldBeOn, setCameraShouldBeOn}) => {
     useEffect(() => {
-        if (!sdkLoaded || !acuantCameraUIAvailable) {
+        if (!sdkLoaded || !acuantCameraUIAvailable || !cameraShouldBeOn) {
             return;
         }
     const cameraCallback = {
@@ -25,6 +25,6 @@ const useCamera = ({sdkLoaded, acuantCameraUIAvailable}) => {
       return () => {
         window.AcuantCameraUI.stop();
       }
-    }, [sdkLoaded, acuantCameraUIAvailable])
+    }, [sdkLoaded, acuantCameraUIAvailable, cameraShouldBeOn])
 }
 export default useCamera;
