@@ -20,7 +20,6 @@ const AcuantCameraUI = ({sdkLoaded, acuantCameraUIAvailable}) => {
         }
       }
 
-      console.log('starting UI');
       window.AcuantCameraUI.start(cameraCallback)
     }, [sdkLoaded, acuantCameraUIAvailable])
 
