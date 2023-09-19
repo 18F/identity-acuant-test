@@ -24,7 +24,7 @@ const initializeSDK = (credentials, endpoint) => {
   });
 }
 
-const useAcuantSDK = () => {
+const useAcuantSDK = (setSdkLoaded) => {
   useEffect(() => {
     // Acuant SDK expects this global to be assigned at the time the script is
     // loaded, which is why the script element is manually appended to the DOM.
@@ -39,6 +39,7 @@ const useAcuantSDK = () => {
         loadAcuantSdk();
       }
       initializeSDK(acuantSdkInitializationCreds, acuantSdkInitializationEndpoint);
+      setSdkLoaded(true);
     }
 
     const acuantDirectory = process.env.PUBLIC_URL + '/acuant/'
@@ -60,7 +61,7 @@ const useAcuantSDK = () => {
       document.body.removeChild(sdkScript);
       document.body.removeChild(cameraScript);
     };
-  }, [])
+  }, [setSdkLoaded])
 }
 
 export default useAcuantSDK;
