@@ -1,9 +1,16 @@
 import './App.css';
 import useAcuantSDK from './acuant-handling/useAcuantSDK';
 import AcuantCameraUI from './acuant-handling/AcuantCameraUI';
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
+import { useCookies } from 'react-cookie';
+
+
 
 function App() {
+  const [cookie, setCookie, removeCookie] = useCookies();
+  useEffect(() => {
+    removeCookie("AcuantCameraHasFailed")
+  })
   const [sdkLoaded, setSdkLoaded] = useState(false);
   useAcuantSDK(setSdkLoaded)
   const acuantCameraUIAvailable = !!window.AcuantCameraUI
