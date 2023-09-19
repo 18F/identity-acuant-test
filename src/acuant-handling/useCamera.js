@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-const AcuantCameraUI = ({sdkLoaded, acuantCameraUIAvailable}) => {
+const useCamera = ({sdkLoaded, acuantCameraUIAvailable}) => {
     useEffect(() => {
         if (!sdkLoaded || !acuantCameraUIAvailable) {
             return;
@@ -21,10 +21,10 @@ const AcuantCameraUI = ({sdkLoaded, acuantCameraUIAvailable}) => {
       }
 
       window.AcuantCameraUI.start(cameraCallback)
-    }, [sdkLoaded, acuantCameraUIAvailable])
 
-    return (
-        <div id="acuant-camera" style={{height: "200px", width: "250px", background: "blue"}} />
-    )
+      return () => {
+        window.AcuantCameraUI.stop();
+      }
+    }, [sdkLoaded, acuantCameraUIAvailable])
 }
-export default AcuantCameraUI;
+export default useCamera;
