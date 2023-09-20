@@ -10,7 +10,7 @@ const handleCameraActivateClick = ({removeCookie, setCameraShouldBeOn}) => {
 }
 function App() {
   // Deal with the cookie that Acuant sets on failure
-  const [cookie, setCookie, removeCookie] = useCookies();
+  const [cookie, , removeCookie] = useCookies();
   useEffect(() => {
     if (cookie.AcuantCameraHasFailed) {
       removeCookie("AcuantCameraHasFailed")
