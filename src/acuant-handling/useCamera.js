@@ -23,8 +23,8 @@ const useCamera = ({sdkLoaded, acuantCameraUIAvailable, cameraShouldBeOn, setCam
       window.AcuantCameraUI.start(cameraCallback)
 
       return () => {
-        window.AcuantCameraUI.stop();
+        setCameraShouldBeOn(false);
       }
-    }, [sdkLoaded, acuantCameraUIAvailable, cameraShouldBeOn])
+    }, [sdkLoaded, acuantCameraUIAvailable, cameraShouldBeOn, setCameraShouldBeOn])
 }
 export default useCamera;
