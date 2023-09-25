@@ -33,10 +33,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div id="acuant-camera" style={{height: "200px", width: "250px", background: "blue"}} />
+        <div id="acuant-camera" style={{height: "200px", width: "250px", background: "gray"}} />
         <button onClick={() => {handleCameraActivateClick({removeCookie, setCameraShouldBeOn})}} >Start Camera</button>
         <p>
-          This is the MVP of the AcuantSDK (09/19/2023)
+          This is the AcuantSDK Running in React.
         </p>
       </header>
     </div>
