@@ -3,6 +3,7 @@ import useAcuantSDK from './acuant-handling/useAcuantSDK';
 import { useState, useEffect} from 'react';
 import { useCookies } from 'react-cookie';
 import useCamera from './acuant-handling/useCamera';
+import { startPassiveLiveness } from './acuant-handling/usePassiveLiveness';
 
 const handleCameraActivateClick = ({removeCookie, setCameraShouldBeOn}) => {
   removeCookie("AcuantCameraHasFailed")
@@ -38,6 +39,11 @@ function App() {
         <p>
           This is the AcuantSDK Running in React.
         </p>
+        <p>
+          Below we should see the selfie capture.
+        </p>
+        <div id="acuant-face-capture-container"></div>
+        <button onClick={() => {startPassiveLiveness()}} >Start PassiveLiveness</button>
       </header>
     </div>
   );
