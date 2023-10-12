@@ -26,7 +26,6 @@ function App() {
 
   // Load the SDK files
   useAcuantSDK(setSdkLoaded)
-  // Check that the camera ui is in fact loaded
   const acuantCameraUIAvailable = !!window.AcuantCameraUI
   // Start the camera
   useCamera({sdkLoaded, acuantCameraUIAvailable, cameraShouldBeOn, setCameraShouldBeOn})

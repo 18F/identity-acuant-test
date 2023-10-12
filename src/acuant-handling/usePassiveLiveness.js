@@ -50,9 +50,5 @@ export const faceCaptureCallback = {
 }
 
 export const startPassiveLiveness = () => {
-  console.log("before calling window.AcuantPassiveLiveness.start");
-  console.log("see window", window);
-  debugger;
   window.AcuantPassiveLiveness.start(faceCaptureCallback, faceDetectionStates);
-  console.log("after calling window.AcuantPassiveLiveness.start");
 }

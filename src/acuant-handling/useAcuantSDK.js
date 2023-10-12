@@ -57,9 +57,14 @@ const useAcuantSDK = (setSdkLoaded) => {
     cameraScript.onerror = onLoadError;
     document.body.appendChild(cameraScript);
 
+    const selfieScript = document.createElement('script');
+    selfieScript.src = acuantDirectory + 'AcuantPassiveLiveness.min.js';
+    document.body.appendChild(selfieScript)
+
     return () => {
       document.body.removeChild(sdkScript);
       document.body.removeChild(cameraScript);
+      document.body.removeChild(selfieScript);
     };
   }, [setSdkLoaded])
 }
