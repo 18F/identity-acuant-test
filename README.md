@@ -3,6 +3,7 @@
 This repository contains the minimum React code to run the Acuant Web SDK in React. It's a prototype and meant to make experimentation easier.
 
 ## Usage
+- Run `npm install`
 - Run `npm start`
 - Use a web browser to examine the web server that starts.
 
